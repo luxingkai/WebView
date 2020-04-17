@@ -8,8 +8,10 @@
 
 #import "ViewController.h"
 #import <WebKit/WebKit.h>
+#import <JavaScriptCore/JavaScriptCore.h>
 #import "UIColor+JMCategory.h"
 #import "JMURLSchemeHandler.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface ViewController ()<WKNavigationDelegate,WKUIDelegate>
 
@@ -80,6 +82,11 @@
     [self.view addSubview:_progressView];
     
     [_webView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
+
+    //运行JS代码
+    [_webView evaluateJavaScript:@"document.getElementById(\"demo\").innerHTML = \"Hello, JavaScript\"" completionHandler:^(id _Nullable sd, NSError * _Nullable error) {
+        NSLog(@"JavaScript 运行出错：%@",error.description);
+    }];
     
     
     // Do any additional setup after loading the view.
