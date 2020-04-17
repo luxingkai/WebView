@@ -41,12 +41,17 @@ WKURLSchemeTask: 为加载资源而创建的任务。
 WKSecurityOrigin: WKSecurityOrigin对象由主机名、协议和端口号组成。第一方加载是指任何加载URL与请求web站点具有相同的安全来源。第一方的网页可以访问彼此的资源，如脚本和数据库。    
 
 
-# JavaScript
+# JavaScript(从应用程序中评估JavaScript程序，并支持应用程序的JavaScript脚本。)
 
+<1>.JavaContext: JSContext对象表示一个JavaScript执行环境。您可以创建并使用JavaScript上下文来评估来自Objective-C或Swift代码的JavaScript脚本，访问在JavaScript中定义或计算的值，以及使JavaScript可以访问本机对象、方法或函数。   
 
+<2>.JSManagedValue:  一个JSManagedValue对象包装了一个JSValue对象，添加“条件保留”行为以提供值的自动内存管理。托管值的主要用例是将JavaScript值存储在Objective-C或Swift对象中，该对象本身被导出到JavaScript。
 
+<3>.JSValue: JSValue实例是对JavaScript值的引用。您可以使用JSValue类在JavaScript和Objective-C或Swift表示之间转换基本值(例如数字和字符串)，以便在本机代码和JavaScript代码之间传递数据。您还可以使用这个类来创建JavaScript对象，这些对象包装自定义类的本机对象或由本机方法或块提供实现的JavaScript函数。
 
+<4>.JSVirtualMachine: JSVirtualMachine实例表示一个自包含的JavaScript执行环境。使用这个类有两个主要目的:支持并发的JavaScript执行，以及管理连接在JavaScript和Objective-C或Swift之间的对象的内存。
 
+<5>. JSExport: 将Objective-C类及其实例方法、类方法和属性导出到JavaScript代码的协议。
 
 
 
