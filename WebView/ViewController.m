@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import <WebKit/WebKit.h>
 #import "UIColor+JMCategory.h"
+#import "JMURLSchemeHandler.h"
 
 @interface ViewController ()<WKNavigationDelegate,WKUIDelegate>
 
@@ -17,6 +18,7 @@
 @implementation ViewController {
     
     UIProgressView *_progressView;
+    WKWebView *_webView;
 }
 
 
@@ -24,14 +26,51 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc] init];
-    configuration.allowsAirPlayForMediaPlayback = NO;
-    WKWebView *webView = [[WKWebView alloc] initWithFrame:[UIScreen mainScreen].bounds configuration:configuration];
-    webView.navigationDelegate = self;
-    webView.UIDelegate = self;
-    [self.view addSubview:webView];
+    //-------------- Configuration ---------//
+    WKPreferences *preferences = [WKPreferences new];
+    preferences.minimumFontSize = 14;
+    preferences.javaScriptEnabled = YES;
+    preferences.javaScriptCanOpenWindowsAutomatically = NO;//default valus is NO.
     
-    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://www.w3school.com.cn/js/js_intro.asp"]]];
+    WKUserContentController *userContentController = [WKUserContentController new];
+    
+    WKWebsiteDataStore *websiteDataStore = [WKWebsiteDataStore defaultDataStore];
+    
+    WKWebpagePreferences *webpagePreferences = [WKWebpagePreferences new];
+    webpagePreferences.preferredContentMode = WKContentModeMobile;
+    
+    JMURLSchemeHandler *urlSchemeHandler = [JMURLSchemeHandler new];
+    
+    //-------------- WebView ---------------//
+    WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc] init];
+    //process pool
+    configuration.processPool = [WKProcessPool new];
+    //preferences
+    configuration.preferences = preferences;
+    //JavaScript
+    configuration.userContentController = userContentController;
+    //dataStore
+    configuration.websiteDataStore = websiteDataStore;
+
+    configuration.suppressesIncrementalRendering = YES;
+    configuration.applicationNameForUserAgent = @"";
+    configuration.allowsAirPlayForMediaPlayback = YES;
+    configuration.mediaTypesRequiringUserActionForPlayback = WKAudiovisualMediaTypeAll;
+    configuration.defaultWebpagePreferences = webpagePreferences;
+    configuration.allowsInlineMediaPlayback = true;
+    configuration.selectionGranularity = WKSelectionGranularityDynamic;
+    configuration.allowsPictureInPictureMediaPlayback = false;
+    configuration.dataDetectorTypes = WKDataDetectorTypeAll;
+    configuration.ignoresViewportScaleLimits = NO;
+    [configuration setURLSchemeHandler:urlSchemeHandler forURLScheme:@"com.fxw.WebView"];
+    
+    configuration.allowsAirPlayForMediaPlayback = NO;
+    _webView = [[WKWebView alloc] initWithFrame:[UIScreen mainScreen].bounds configuration:configuration];
+    _webView.navigationDelegate = self;
+    _webView.UIDelegate = self;
+    [self.view addSubview:_webView];
+    
+    [_webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://www.w3school.com.cn/js/js_intro.asp"]]];
     
     CGFloat statusHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
     _progressView = [[UIProgressView alloc] initWithFrame:CGRectMake(0, statusHeight, self.view.frame.size.width, 1.0)];
@@ -39,8 +78,9 @@
     _progressView.progressTintColor = [UIColor greenColor];
     _progressView.trackTintColor = [UIColor redColor];
     [self.view addSubview:_progressView];
-
-    [webView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
+    
+    [_webView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
+    
     
     // Do any additional setup after loading the view.
 }
@@ -57,10 +97,14 @@
     if ([keyPath isEqualToString:@"estimatedProgress"]) {
         float progress = [change[@"new"] floatValue];
         [_progressView setProgress:progress animated:true];
+        if (progress == 1.0) {
+            _progressView.hidden = YES;
+        }
     }
 }
 
 
+#pragma mark -- WKNavigationDelegate
 #pragma mark --
 ///Called when the web view begins to receive web content.
 - (void)webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation {
@@ -110,12 +154,50 @@
 
 
 
+#pragma mark -- WKUIDelegate
+#pragma mark --
+
+- (nullable WKWebView *)webView:(WKWebView *)webView createWebViewWithConfiguration:(WKWebViewConfiguration *)configuration forNavigationAction:(WKNavigationAction *)navigationAction windowFeatures:(WKWindowFeatures *)windowFeatures {
+    return _webView;
+}
+
+- (void)webViewDidClose:(WKWebView *)webView {
+    
+}
+
+- (void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completionHandler {
+    
+}
+
+- (void)webView:(WKWebView *)webView runJavaScriptConfirmPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(BOOL result))completionHandler {
+    
+    
+}
+
+- (void)webView:(WKWebView *)webView runJavaScriptTextInputPanelWithPrompt:(NSString *)prompt defaultText:(nullable NSString *)defaultText initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(NSString * _Nullable result))completionHandler {
+    
+}
 
 
+- (void)webView:(WKWebView *)webView contextMenuConfigurationForElement:(WKContextMenuElementInfo *)elementInfo completionHandler:(void (^)(UIContextMenuConfiguration * _Nullable configuration))completionHandler API_AVAILABLE(ios(13.0)){
+    
+}
 
+- (void)webView:(WKWebView *)webView contextMenuWillPresentForElement:(WKContextMenuElementInfo *)elementInfo  API_AVAILABLE(ios(13.0)){
+    
+}
 
+- (void)webView:(WKWebView *)webView contextMenuForElement:(WKContextMenuElementInfo *)elementInfo willCommitWithAnimator:(id <UIContextMenuInteractionCommitAnimating>)animator API_AVAILABLE(ios(13.0)){
+    
+}
 
+- (void)webView:(WKWebView *)webView contextMenuDidEndForElement:(WKContextMenuElementInfo *)elementInfo API_AVAILABLE(ios(13.0)) {
+    
+}
 
+- (void)webView:(WKWebView *)webView runOpenPanelWithParameters:(WKOpenPanelParameters *)parameters initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(NSArray<NSURL *> * _Nullable URLs))completionHandler {
+    
+}
 
 
 
