@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		112917D324471F2D0066D462 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 112917D224471F2D0066D462 /* AppDelegate.m */; };
-		112917D624471F2D0066D462 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 112917D524471F2D0066D462 /* SceneDelegate.m */; };
 		112917D924471F2D0066D462 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 112917D824471F2D0066D462 /* ViewController.m */; };
 		112917DC24471F2D0066D462 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 112917DA24471F2D0066D462 /* Main.storyboard */; };
 		112917DE24471F2F0066D462 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 112917DD24471F2F0066D462 /* Assets.xcassets */; };
@@ -16,6 +15,16 @@
 		112917E424471F2F0066D462 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 112917E324471F2F0066D462 /* main.m */; };
 		112917EE24471F2F0066D462 /* WebViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 112917ED24471F2F0066D462 /* WebViewTests.m */; };
 		112917F924471F2F0066D462 /* WebViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 112917F824471F2F0066D462 /* WebViewUITests.m */; };
+		11421B6E24ADBF0B00DED2A7 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 11421B6D24ADBF0B00DED2A7 /* README.md */; };
+		119B1BBF2583187600B96A23 /* WebKitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 119B1BBE2583187600B96A23 /* WebKitViewController.m */; };
+		119B1BC225831A4D00B96A23 /* WebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 119B1BC125831A4D00B96A23 /* WebView.m */; };
+		119B1BC52583215800B96A23 /* WebViewConfigurationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 119B1BC42583215800B96A23 /* WebViewConfigurationController.m */; };
+		119B1BC82583217700B96A23 /* WebDataManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = 119B1BC72583217700B96A23 /* WebDataManagement.m */; };
+		119B1BCB2583219600B96A23 /* Navigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 119B1BCA2583219600B96A23 /* Navigation.m */; };
+		119B1BCE258321C400B96A23 /* PageContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 119B1BCD258321C400B96A23 /* PageContent.m */; };
+		119B1BD1258321DD00B96A23 /* PageLevelSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 119B1BD0258321DD00B96A23 /* PageLevelSearch.m */; };
+		119B1BD4258321F200B96A23 /* ContextualMenus.m in Sources */ = {isa = PBXBuildFile; fileRef = 119B1BD3258321F200B96A23 /* ContextualMenus.m */; };
+		119B1BD7258321FF00B96A23 /* Snapshots.m in Sources */ = {isa = PBXBuildFile; fileRef = 119B1BD6258321FF00B96A23 /* Snapshots.m */; };
 		11D24C1C244947B5008377C5 /* UIColor+JMCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D24C1B244947B5008377C5 /* UIColor+JMCategory.m */; };
 		11D24C1F244977BD008377C5 /* JMURLSchemeHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D24C1E244977BD008377C5 /* JMURLSchemeHandler.m */; };
 /* End PBXBuildFile section */
@@ -41,8 +50,6 @@
 		112917CE24471F2D0066D462 /* WebView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		112917D124471F2D0066D462 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		112917D224471F2D0066D462 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		112917D424471F2D0066D462 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		112917D524471F2D0066D462 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		112917D724471F2D0066D462 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		112917D824471F2D0066D462 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		112917DB24471F2D0066D462 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -56,6 +63,25 @@
 		112917F424471F2F0066D462 /* WebViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WebViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		112917F824471F2F0066D462 /* WebViewUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebViewUITests.m; sourceTree = "<group>"; };
 		112917FA24471F2F0066D462 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11421B6D24ADBF0B00DED2A7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		119B1BBD2583187600B96A23 /* WebKitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebKitViewController.h; sourceTree = "<group>"; };
+		119B1BBE2583187600B96A23 /* WebKitViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebKitViewController.m; sourceTree = "<group>"; };
+		119B1BC025831A4D00B96A23 /* WebView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebView.h; sourceTree = "<group>"; };
+		119B1BC125831A4D00B96A23 /* WebView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebView.m; sourceTree = "<group>"; };
+		119B1BC32583215800B96A23 /* WebViewConfigurationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebViewConfigurationController.h; sourceTree = "<group>"; };
+		119B1BC42583215800B96A23 /* WebViewConfigurationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebViewConfigurationController.m; sourceTree = "<group>"; };
+		119B1BC62583217700B96A23 /* WebDataManagement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebDataManagement.h; sourceTree = "<group>"; };
+		119B1BC72583217700B96A23 /* WebDataManagement.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebDataManagement.m; sourceTree = "<group>"; };
+		119B1BC92583219600B96A23 /* Navigation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Navigation.h; sourceTree = "<group>"; };
+		119B1BCA2583219600B96A23 /* Navigation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Navigation.m; sourceTree = "<group>"; };
+		119B1BCC258321C400B96A23 /* PageContent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PageContent.h; sourceTree = "<group>"; };
+		119B1BCD258321C400B96A23 /* PageContent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageContent.m; sourceTree = "<group>"; };
+		119B1BCF258321DD00B96A23 /* PageLevelSearch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PageLevelSearch.h; sourceTree = "<group>"; };
+		119B1BD0258321DD00B96A23 /* PageLevelSearch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageLevelSearch.m; sourceTree = "<group>"; };
+		119B1BD2258321F200B96A23 /* ContextualMenus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContextualMenus.h; sourceTree = "<group>"; };
+		119B1BD3258321F200B96A23 /* ContextualMenus.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContextualMenus.m; sourceTree = "<group>"; };
+		119B1BD5258321FF00B96A23 /* Snapshots.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Snapshots.h; sourceTree = "<group>"; };
+		119B1BD6258321FF00B96A23 /* Snapshots.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Snapshots.m; sourceTree = "<group>"; };
 		11D24C1924493F74008377C5 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		11D24C1A244947B5008377C5 /* UIColor+JMCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+JMCategory.h"; sourceTree = "<group>"; };
 		11D24C1B244947B5008377C5 /* UIColor+JMCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+JMCategory.m"; sourceTree = "<group>"; };
@@ -111,10 +137,10 @@
 		112917D024471F2D0066D462 /* WebView */ = {
 			isa = PBXGroup;
 			children = (
+				11865DF62537EECA0010C178 /* WKWebView */,
+				11421B6D24ADBF0B00DED2A7 /* README.md */,
 				112917D124471F2D0066D462 /* AppDelegate.h */,
 				112917D224471F2D0066D462 /* AppDelegate.m */,
-				112917D424471F2D0066D462 /* SceneDelegate.h */,
-				112917D524471F2D0066D462 /* SceneDelegate.m */,
 				112917D724471F2D0066D462 /* ViewController.h */,
 				112917D824471F2D0066D462 /* ViewController.m */,
 				11D24C1D244977BD008377C5 /* JMURLSchemeHandler.h */,
@@ -147,6 +173,31 @@
 				112917FA24471F2F0066D462 /* Info.plist */,
 			);
 			path = WebViewUITests;
+			sourceTree = "<group>";
+		};
+		11865DF62537EECA0010C178 /* WKWebView */ = {
+			isa = PBXGroup;
+			children = (
+				119B1BBD2583187600B96A23 /* WebKitViewController.h */,
+				119B1BBE2583187600B96A23 /* WebKitViewController.m */,
+				119B1BC025831A4D00B96A23 /* WebView.h */,
+				119B1BC125831A4D00B96A23 /* WebView.m */,
+				119B1BC32583215800B96A23 /* WebViewConfigurationController.h */,
+				119B1BC42583215800B96A23 /* WebViewConfigurationController.m */,
+				119B1BC62583217700B96A23 /* WebDataManagement.h */,
+				119B1BC72583217700B96A23 /* WebDataManagement.m */,
+				119B1BC92583219600B96A23 /* Navigation.h */,
+				119B1BCA2583219600B96A23 /* Navigation.m */,
+				119B1BCC258321C400B96A23 /* PageContent.h */,
+				119B1BCD258321C400B96A23 /* PageContent.m */,
+				119B1BCF258321DD00B96A23 /* PageLevelSearch.h */,
+				119B1BD0258321DD00B96A23 /* PageLevelSearch.m */,
+				119B1BD2258321F200B96A23 /* ContextualMenus.h */,
+				119B1BD3258321F200B96A23 /* ContextualMenus.m */,
+				119B1BD5258321FF00B96A23 /* Snapshots.h */,
+				119B1BD6258321FF00B96A23 /* Snapshots.m */,
+			);
+			path = WKWebView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,6 +305,7 @@
 			files = (
 				112917E124471F2F0066D462 /* LaunchScreen.storyboard in Resources */,
 				112917DE24471F2F0066D462 /* Assets.xcassets in Resources */,
+				11421B6E24ADBF0B00DED2A7 /* README.md in Resources */,
 				112917DC24471F2D0066D462 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,12 +331,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				119B1BD4258321F200B96A23 /* ContextualMenus.m in Sources */,
+				119B1BCE258321C400B96A23 /* PageContent.m in Sources */,
+				119B1BC52583215800B96A23 /* WebViewConfigurationController.m in Sources */,
+				119B1BC225831A4D00B96A23 /* WebView.m in Sources */,
+				119B1BD1258321DD00B96A23 /* PageLevelSearch.m in Sources */,
 				112917D924471F2D0066D462 /* ViewController.m in Sources */,
+				119B1BCB2583219600B96A23 /* Navigation.m in Sources */,
 				11D24C1C244947B5008377C5 /* UIColor+JMCategory.m in Sources */,
 				11D24C1F244977BD008377C5 /* JMURLSchemeHandler.m in Sources */,
+				119B1BC82583217700B96A23 /* WebDataManagement.m in Sources */,
 				112917D324471F2D0066D462 /* AppDelegate.m in Sources */,
+				119B1BBF2583187600B96A23 /* WebKitViewController.m in Sources */,
 				112917E424471F2F0066D462 /* main.m in Sources */,
-				112917D624471F2D0066D462 /* SceneDelegate.m in Sources */,
+				119B1BD7258321FF00B96A23 /* Snapshots.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
