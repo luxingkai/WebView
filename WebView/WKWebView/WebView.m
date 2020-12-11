@@ -96,6 +96,77 @@
      disable your buttons.
      */
     
+    
+#pragma mark -- Creating a Web View
+    
+//    [WKWebView alloc] initWithFrame:<#(CGRect)#> configuration:<#(nonnull WKWebViewConfiguration *)#>
+    WKWebView *webView = nil;
+//    webView.configuration
+    
+    
+#pragma mark -- Determining Whether WebKit Can Load Content
+    
+//    WKWebView handlesURLScheme:<#(nonnull NSString *)#>
+    
+    
+#pragma mark -- Displaying Native User Interface Elements
+    
+//    webView.UIDelegate
+        
+    
+#pragma mark -- Managing Navigation Between Webpages
+    
+//    webView.navigationDelegate
+
+    
+#pragma mark -- Loading Web Content
+        
+//    webView loadRequest:<#(nonnull NSURLRequest *)#>
+//    webView loadHTMLString:<#(nonnull NSString *)#> baseURL:<#(nullable NSURL *)#>
+//    webView loadFileURL:<#(nonnull NSURL *)#> allowingReadAccessToURL:<#(nonnull NSURL *)#>
+//    webView loadData:<#(nonnull NSData *)#> MIMEType:<#(nonnull NSString *)#> characterEncodingName:<#(nonnull NSString *)#> baseURL:<#(nonnull NSURL *)#>
+//    webView.loading
+//    webView.estimatedProgress
+    
+#pragma mark -- Managing the Loading Process
+    
+//    [webView reload];
+//    webView reloadFromOrigin
+//    webView.reloadFromOrigin
+//    webView stopLoading
+//    webView.stopLoading
+ 
+    
+#pragma mark -- Inspecting the View Information
+    
+//    webView.scrollView
+//    webView.title
+//    webView.URL
+//    webView.customUserAgent
+//    webView.serverTrust
+//    webView.hasOnlySecureContent
+    
+    
+#pragma mark -- Searching the Current Page's Content (iOS14)
+    
+#pragma mark -- Navigating Between Webpages
+    
+//    webView.allowsBackForwardNavigationGestures
+//    webView.backForwardList
+//    webView goBack
+//    webView.goBack
+//    webView goForward
+//    webView.goForward
+//    webView goToBackForwardListItem:<#(nonnull WKBackForwardListItem *)#>
+//    webView canGoBack
+//    webView canGoForward
+//    webView.allowsLinkPreview
+    
+#pragma mark -- Capturing the WebView's Content
+    
+//    webView takeSnapshotWithConfiguration:<#(nullable WKSnapshotConfiguration *)#> completionHandler:<#^(UIImage * _Nullable snapshotImage, NSError * _Nullable error)completionHandler#>
+    
+    
 }
 
 /*
