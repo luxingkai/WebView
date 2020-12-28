@@ -49,7 +49,8 @@
      Creates a new data store object that stores website data in memory,
      and doesn’t write that data to disk.
      */
-    
+     WKWebsiteDataStore *websiteDataStore = [WKWebsiteDataStore defaultDataStore];
+        
     
     /**
      Inspecting Data Store Properties
