@@ -17,6 +17,33 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    
+    /**
+     WKContextMenuElementInfo
+     
+     An object that contains information about a link the user
+     clicked in a webpage, and which you use to configure a
+     context menu for that link.
+
+     A WKContextMenuElementInfo object contains the URL
+     of a link in the web view’s content. You don’t create
+     instances of this class directly. Instead, the web
+     view creates them and passes them to the methods of
+     its associated WKUIDelegate object when the user
+     interacts with the link. In your delegate method
+     implementations, use the URL in this object to determine
+     how to configure the contextual menu.
+     */
+    
+    /**
+     Getting the Element Information
+
+     linkURL
+     The URL of the link that the user clicked.
+     */
+    
+    
 }
 
 /*

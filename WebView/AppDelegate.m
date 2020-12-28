@@ -29,8 +29,9 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
-    WebKitViewController *vc = [WebKitViewController new];
-    self.window.rootViewController = vc;
+    PageContent *vc = [PageContent new];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
     
     return YES;

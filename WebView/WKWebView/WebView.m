@@ -18,6 +18,100 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    
+#pragma mark -- Replacing UIWebView in Your App
+    
+    /*
+     Find a suitable alternative to handle your app's web content.
+     
+     If your app is using UIWebView, you need to replace it with
+     another Apple technology, because this class is now deprecated.
+     Choose among several technologies, based on your app's functionality
+     and the degree of configurability you need. This article explores
+     some alternatives and specifically the configuration and
+     architectural changes of WKWebView.
+     */
+    
+    /**
+     Consider Alternative Technologies
+     
+     Before beginning a migration away from UIWebView, consider whether
+     it can be replaced with other tools. Apple has a variety of technologies
+     that can replace a web view to accomplish similar functionality, and
+     possibly a richer feature set with less code.
+     
+     If you need an in-app web browser and don't need deep customization
+     of that experience, SFSafariViewController is a good choice. It handles
+     all the features you would need to implement in a basic browser and more.
+     
+     If you need to authenticate your users, use ASWebAuthenticationSession.
+     If you need to display maps or map tiles, consider using MPMapView.
+     */
+    
+    /**
+     Update to WKWebView
+     
+     If you need a high degree of configurability or are using web content
+     in ways unrelated to browsing, Use WKWebView.
+     
+     WKWebView is not a drop-in replacement for UIWebView. It has a
+     different architecture that requires rethinking how you use web views,
+     as well as code changes to implement its functionality.
+     You may not be able to implement some features in WKWebView.
+     */
+    
+    /**
+     Implement Delegates for Functionality
+
+     WKWebView uses various delegates to implement functionality
+     that is similar to UIWebView Delegate. The table below shows
+     the UIWebViewDelegates and their WKWebView equivalents, in
+     the WKNavigationDelegate column.
+     
+     UIWebViewDelegate
+     webViewDidStartLoad:
+     webViewDidFinishLoad:
+     webView:didFailLoadWithError:
+     webView:shouldStartLoadWithRequest:navigationType:
+     connection:didReceiveAuthenticationChallenge:
+     
+     WKNavigationDelegate
+     webview:didStartProvisionalNavigation:
+     webView:didFinishNavigation:
+     webView:didFailProvisionalNavigation:withError:
+     webView:didFailNavigation:withError:
+     webView:decidePolicyForNavigationAction:decisionHandler:
+     webView:decidePolicyForNavigationResponse:decisionHandler:
+     webView:didReceiveAuthenticationChallenge:completionHandler:
+     
+     ⚠️ The webView:decidePolicyForNavigationAction:decisionHandler:
+     function doesn't return a BOOL as its UIWebView counterpart did;
+     it uses the decisionHandler to return an allow or cancel value.
+     */
+    
+    
+    /**
+     Plan for Architectural Changes
+     
+     One major architectural difference between UIWebView and WKWebView
+     is that WkWebView's methods tend to be asynchronous, while
+     UIWebView's methods were synchronous.
+     
+     This difference requires code and architecture changes in your app.
+     Another major change relates to creating single sign on (SSO)
+     functionality. Cookie restrictions across the entire WKWebView
+     landscape, mean SSO functionality in WKWebView is not supported
+     for third-party cookies and clients should use a token-based
+     authentication system like OAuth for SSO. Third-party cookies
+     are cookies for a domain other than the domain for which the
+     context was loaded. APIs in the Authentication Service
+     framework are specifically built to do this.
+     */
+    
+    
+    
+#pragma mark --
+    
     /*
      An object that displays interactive web content, such as for
      an in-app browser.
@@ -97,30 +191,36 @@
      */
     
     
-#pragma mark -- Creating a Web View
-    
+ 
+    /**
+     Creating a Web View
+     */
 //    [WKWebView alloc] initWithFrame:<#(CGRect)#> configuration:<#(nonnull WKWebViewConfiguration *)#>
     WKWebView *webView = nil;
 //    webView.configuration
     
     
-#pragma mark -- Determining Whether WebKit Can Load Content
-    
+    /**
+     Determining Whether WebKit Can Load Content
+     */
 //    WKWebView handlesURLScheme:<#(nonnull NSString *)#>
     
     
-#pragma mark -- Displaying Native User Interface Elements
-    
+    /**
+     Displaying Native User Interface Elements
+     */
 //    webView.UIDelegate
         
     
-#pragma mark -- Managing Navigation Between Webpages
-    
+    /**
+     Managing Navigation Between Webpages
+     */
 //    webView.navigationDelegate
 
-    
-#pragma mark -- Loading Web Content
-        
+
+    /**
+     Loading Web Content
+     */
 //    webView loadRequest:<#(nonnull NSURLRequest *)#>
 //    webView loadHTMLString:<#(nonnull NSString *)#> baseURL:<#(nullable NSURL *)#>
 //    webView loadFileURL:<#(nonnull NSURL *)#> allowingReadAccessToURL:<#(nonnull NSURL *)#>
@@ -128,17 +228,20 @@
 //    webView.loading
 //    webView.estimatedProgress
     
-#pragma mark -- Managing the Loading Process
     
+    /**
+     Managing the Loading Process
+     */
 //    [webView reload];
 //    webView reloadFromOrigin
 //    webView.reloadFromOrigin
 //    webView stopLoading
 //    webView.stopLoading
  
-    
-#pragma mark -- Inspecting the View Information
-    
+
+    /**
+     Inspecting the View Information
+     */
 //    webView.scrollView
 //    webView.title
 //    webView.URL
@@ -147,10 +250,14 @@
 //    webView.hasOnlySecureContent
     
     
-#pragma mark -- Searching the Current Page's Content (iOS14)
+    /**
+     Searching the Current Page's Content (iOS14)
+     */
     
-#pragma mark -- Navigating Between Webpages
     
+    /**
+     Navigating Between Webpages
+     */
 //    webView.allowsBackForwardNavigationGestures
 //    webView.backForwardList
 //    webView goBack
@@ -161,10 +268,93 @@
 //    webView canGoBack
 //    webView canGoForward
 //    webView.allowsLinkPreview
+
     
-#pragma mark -- Capturing the WebView's Content
+    /**
+     Executing JavaScript
+     */
+//    webView evaluateJavaScript:<#(nonnull NSString *)#> completionHandler:<#^(id _Nullable, NSError * _Nullable error)completionHandler#>
     
+    
+    /**
+     Capturing the WebView's Content
+     */
 //    webView takeSnapshotWithConfiguration:<#(nullable WKSnapshotConfiguration *)#> completionHandler:<#^(UIImage * _Nullable snapshotImage, NSError * _Nullable error)completionHandler#>
+    
+    
+    
+#pragma mark -- WKUIDelegate
+    
+    /**
+     The methods for presenting native user interface elements
+     on behalf of a webpage.
+     
+     Web view user interface delegates implement this protocol
+     to control the opening of new windows, augment the behavior
+     of default menus items displayed when the user clicks
+     elements, and perform other user interface-related tasks.
+     These methods can be invoked as a result of handling JavaScript
+     or other plug-in content. The default web view implementation
+     assumes one window per web view, so nonconventional uesr interfaces
+     might implement a user interface delegate.
+     */
+    
+    /**
+     Creating and Closing the Web View
+     
+     - webView:createWebViewWithConfiguration:forNavigationAction:windowFeatures:
+     Creates a new web view.
+     
+     - webViewDidClose:
+     Notifies your app that the DOM window closed successfully.
+     */
+    
+    /**
+     Displaying UI Panels
+     
+     - webView:runJavaScriptAlertPanelWithMessage:initiatedByFrame:completionHandler:
+     Displays a JavaScript alert panel.
+
+     - webView:runJavaScriptConfirmPanelWithMessage:initiatedByFrame:completionHandler:
+     Displays a JavaScript confirm panel.
+     
+     - webView:runJavaScriptTextInputPanelWithPrompt:defaultText:initiatedByFrame:completionHandler:
+     Displays a JavaScript text input panel.
+     */
+    
+    /**
+     Displaying an Upload Panel
+     
+     - webView:runOpenPanelWithParameters:initiatedByFrame:completionHandler:
+     Displays a file upload panel.
+     
+     WKOpenPanelParameters
+     The configuration details of a file upload control in your web content.
+     */
+    
+    /**
+     Displaying a Contextual Menu
+     
+     - webView:contextMenuConfigurationForElement:completionHandler:
+     Tells the delegate that a contextual menu interaction began.
+     
+     - webView:contextMenuForElement:willCommitWithAnimator:
+     Provides the delegate with the animator object that the web view
+     uses to display the contextual menu.
+     
+     - webView:contextMenuWillPresentForElement:
+     Tells the delegate that the web view is about to present the
+     contextual menu for the specified element.
+     
+     - webView:contextMenuDidEndForElement:
+     Tells the delegate that the web view dismissed the contextual
+     menu for the specified element.
+     
+     UIContextMenuConfiguration
+     An object containing the configuration details for the contextual menu.
+     */
+    
+    
     
     
 }
