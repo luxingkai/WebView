@@ -16,6 +16,11 @@
 		112917EE24471F2F0066D462 /* WebViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 112917ED24471F2F0066D462 /* WebViewTests.m */; };
 		112917F924471F2F0066D462 /* WebViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 112917F824471F2F0066D462 /* WebViewUITests.m */; };
 		11421B6E24ADBF0B00DED2A7 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 11421B6D24ADBF0B00DED2A7 /* README.md */; };
+		1163EC62259AF9D2003BEAC0 /* UniversalLinks.m in Sources */ = {isa = PBXBuildFile; fileRef = 1163EC61259AF9D2003BEAC0 /* UniversalLinks.m */; };
+		1163EC65259B03BB003BEAC0 /* SupportingAssociatedDomains.m in Sources */ = {isa = PBXBuildFile; fileRef = 1163EC64259B03BB003BEAC0 /* SupportingAssociatedDomains.m */; };
+		1163EC67259B086A003BEAC0 /* 741497b6-a7af-427b-9e5a-4980336ac70e.png in Resources */ = {isa = PBXBuildFile; fileRef = 1163EC66259B086A003BEAC0 /* 741497b6-a7af-427b-9e5a-4980336ac70e.png */; };
+		1163EC6A259B099B003BEAC0 /* AssociatedDomainsEntitlement.m in Sources */ = {isa = PBXBuildFile; fileRef = 1163EC69259B099B003BEAC0 /* AssociatedDomainsEntitlement.m */; };
+		1163EC6D259B0B55003BEAC0 /* SupportingUniversalLinksInYourApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 1163EC6C259B0B55003BEAC0 /* SupportingUniversalLinksInYourApp.m */; };
 		119B1BBF2583187600B96A23 /* WebKitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 119B1BBE2583187600B96A23 /* WebKitViewController.m */; };
 		119B1BC225831A4D00B96A23 /* WebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 119B1BC125831A4D00B96A23 /* WebView.m */; };
 		119B1BC52583215800B96A23 /* WebViewConfigurationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 119B1BC42583215800B96A23 /* WebViewConfigurationController.m */; };
@@ -64,6 +69,15 @@
 		112917F824471F2F0066D462 /* WebViewUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebViewUITests.m; sourceTree = "<group>"; };
 		112917FA24471F2F0066D462 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11421B6D24ADBF0B00DED2A7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		1163EC60259AF9D2003BEAC0 /* UniversalLinks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UniversalLinks.h; sourceTree = "<group>"; };
+		1163EC61259AF9D2003BEAC0 /* UniversalLinks.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UniversalLinks.m; sourceTree = "<group>"; };
+		1163EC63259B03BB003BEAC0 /* SupportingAssociatedDomains.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SupportingAssociatedDomains.h; sourceTree = "<group>"; };
+		1163EC64259B03BB003BEAC0 /* SupportingAssociatedDomains.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SupportingAssociatedDomains.m; sourceTree = "<group>"; };
+		1163EC66259B086A003BEAC0 /* 741497b6-a7af-427b-9e5a-4980336ac70e.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "741497b6-a7af-427b-9e5a-4980336ac70e.png"; sourceTree = "<group>"; };
+		1163EC68259B099B003BEAC0 /* AssociatedDomainsEntitlement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AssociatedDomainsEntitlement.h; sourceTree = "<group>"; };
+		1163EC69259B099B003BEAC0 /* AssociatedDomainsEntitlement.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AssociatedDomainsEntitlement.m; sourceTree = "<group>"; };
+		1163EC6B259B0B55003BEAC0 /* SupportingUniversalLinksInYourApp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SupportingUniversalLinksInYourApp.h; sourceTree = "<group>"; };
+		1163EC6C259B0B55003BEAC0 /* SupportingUniversalLinksInYourApp.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SupportingUniversalLinksInYourApp.m; sourceTree = "<group>"; };
 		119B1BBD2583187600B96A23 /* WebKitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebKitViewController.h; sourceTree = "<group>"; };
 		119B1BBE2583187600B96A23 /* WebKitViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebKitViewController.m; sourceTree = "<group>"; };
 		119B1BC025831A4D00B96A23 /* WebView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebView.h; sourceTree = "<group>"; };
@@ -137,6 +151,7 @@
 		112917D024471F2D0066D462 /* WebView */ = {
 			isa = PBXGroup;
 			children = (
+				1163EC5F259AF97A003BEAC0 /* AllowingAppsAndWebsitesToLinkToYourContent */,
 				11865DF62537EECA0010C178 /* WKWebView */,
 				11421B6D24ADBF0B00DED2A7 /* README.md */,
 				112917D124471F2D0066D462 /* AppDelegate.h */,
@@ -148,6 +163,7 @@
 				11D24C1A244947B5008377C5 /* UIColor+JMCategory.h */,
 				11D24C1B244947B5008377C5 /* UIColor+JMCategory.m */,
 				11D24C1924493F74008377C5 /* PrefixHeader.pch */,
+				1163EC66259B086A003BEAC0 /* 741497b6-a7af-427b-9e5a-4980336ac70e.png */,
 				112917DA24471F2D0066D462 /* Main.storyboard */,
 				112917DD24471F2F0066D462 /* Assets.xcassets */,
 				112917DF24471F2F0066D462 /* LaunchScreen.storyboard */,
@@ -173,6 +189,21 @@
 				112917FA24471F2F0066D462 /* Info.plist */,
 			);
 			path = WebViewUITests;
+			sourceTree = "<group>";
+		};
+		1163EC5F259AF97A003BEAC0 /* AllowingAppsAndWebsitesToLinkToYourContent */ = {
+			isa = PBXGroup;
+			children = (
+				1163EC60259AF9D2003BEAC0 /* UniversalLinks.h */,
+				1163EC61259AF9D2003BEAC0 /* UniversalLinks.m */,
+				1163EC63259B03BB003BEAC0 /* SupportingAssociatedDomains.h */,
+				1163EC64259B03BB003BEAC0 /* SupportingAssociatedDomains.m */,
+				1163EC68259B099B003BEAC0 /* AssociatedDomainsEntitlement.h */,
+				1163EC69259B099B003BEAC0 /* AssociatedDomainsEntitlement.m */,
+				1163EC6B259B0B55003BEAC0 /* SupportingUniversalLinksInYourApp.h */,
+				1163EC6C259B0B55003BEAC0 /* SupportingUniversalLinksInYourApp.m */,
+			);
+			path = AllowingAppsAndWebsitesToLinkToYourContent;
 			sourceTree = "<group>";
 		};
 		11865DF62537EECA0010C178 /* WKWebView */ = {
@@ -306,6 +337,7 @@
 				112917E124471F2F0066D462 /* LaunchScreen.storyboard in Resources */,
 				112917DE24471F2F0066D462 /* Assets.xcassets in Resources */,
 				11421B6E24ADBF0B00DED2A7 /* README.md in Resources */,
+				1163EC67259B086A003BEAC0 /* 741497b6-a7af-427b-9e5a-4980336ac70e.png in Resources */,
 				112917DC24471F2D0066D462 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -333,17 +365,21 @@
 			files = (
 				119B1BD4258321F200B96A23 /* ContextualMenus.m in Sources */,
 				119B1BCE258321C400B96A23 /* PageContent.m in Sources */,
+				1163EC6D259B0B55003BEAC0 /* SupportingUniversalLinksInYourApp.m in Sources */,
 				119B1BC52583215800B96A23 /* WebViewConfigurationController.m in Sources */,
 				119B1BC225831A4D00B96A23 /* WebView.m in Sources */,
 				119B1BD1258321DD00B96A23 /* PageLevelSearch.m in Sources */,
 				112917D924471F2D0066D462 /* ViewController.m in Sources */,
+				1163EC62259AF9D2003BEAC0 /* UniversalLinks.m in Sources */,
 				119B1BCB2583219600B96A23 /* Navigation.m in Sources */,
 				11D24C1C244947B5008377C5 /* UIColor+JMCategory.m in Sources */,
+				1163EC6A259B099B003BEAC0 /* AssociatedDomainsEntitlement.m in Sources */,
 				11D24C1F244977BD008377C5 /* JMURLSchemeHandler.m in Sources */,
 				119B1BC82583217700B96A23 /* WebDataManagement.m in Sources */,
 				112917D324471F2D0066D462 /* AppDelegate.m in Sources */,
 				119B1BBF2583187600B96A23 /* WebKitViewController.m in Sources */,
 				112917E424471F2F0066D462 /* main.m in Sources */,
+				1163EC65259B03BB003BEAC0 /* SupportingAssociatedDomains.m in Sources */,
 				119B1BD7258321FF00B96A23 /* Snapshots.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

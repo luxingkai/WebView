@@ -8,7 +8,7 @@
 
 #import "PageContent.h"
 
-@interface PageContent ()
+@interface PageContent ()<WKScriptMessageHandler>
 
 @end
 
@@ -357,6 +357,25 @@
      A Boolean value that indicates whether to inject the script
      into the main frame or all frames.
      */
+    
+    
+    WKWebViewConfiguration *configuration = [WKWebViewConfiguration new];
+    WKUserContentController *contentController = [WKUserContentController new];
+    [contentController addScriptMessageHandler:self name:@"currentCookies"];
+    configuration.userContentController = contentController;
+    
+    WKWebView *webView = [[WKWebView alloc] initWithFrame:[UIScreen mainScreen].bounds configuration:configuration];
+    [self.view addSubview:webView];
+    
+    NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@"https://app.fxwapp.com/html/activity/callback.html?id=144"]];
+    [webView loadRequest:urlRequest];
+    
+}
+
+- (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message {
+    
+    //
+    NSLog(@"message %@",message.body);
     
 }
 

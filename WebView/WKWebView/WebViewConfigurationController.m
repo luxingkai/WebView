@@ -29,7 +29,7 @@
      how to configure a WKWebView object. Use your configuration
      object to specify:
      
-     •  The initial cookies to make  available to your web content
+     •  The initial cookies to make available to your web content
      •  Handlers for any custom URL schemes your web content uses
      •  Setting for how to handle media content
      •  Information about how to manage selections within the web view
@@ -90,6 +90,7 @@
      */
     
     
+    
     /**
      Configuring the Rendering Behavior
      
@@ -101,6 +102,7 @@
      A Boolean value that indicates whether the web view suppresses
      content rendering until the content is fully loaded into memory.
      */
+    webViewConfiguration.ignoresViewportScaleLimits = NO;
     
     
     /**
@@ -135,6 +137,7 @@
      ==WKDataDetectorTypes
      The data detector types.
      */
+    webViewConfiguration.dataDetectorTypes = UIDataDetectorTypePhoneNumber | UIDataDetectorTypeLink;
     
     
     /**

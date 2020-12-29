@@ -8,7 +8,7 @@
 
 #import "WebView.h"
 
-@interface WebView ()
+@interface WebView ()<WKUIDelegate>
 
 @end
 
@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
     
     
 #pragma mark -- Replacing UIWebView in Your App
@@ -31,6 +32,7 @@
      some alternatives and specifically the configuration and
      architectural changes of WKWebView.
      */
+    
     
     /**
      Consider Alternative Technologies
@@ -354,10 +356,50 @@
      An object containing the configuration details for the contextual menu.
      */
     
-    
-    
+}
+
+#pragma mark -- Creating and Closing the Web View
+- (nullable WKWebView *)webView:(WKWebView *)webView createWebViewWithConfiguration:(WKWebViewConfiguration *)configuration forNavigationAction:(WKNavigationAction *)navigationAction windowFeatures:(WKWindowFeatures *)windowFeatures {
+    return nil;
+}
+
+- (void)webViewDidClose:(WKWebView *)webView {
     
 }
+
+#pragma mark -- Displaying UI Panels
+- (void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completionHandler {
+    
+}
+
+- (void)webView:(WKWebView *)webView runJavaScriptConfirmPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(BOOL))completionHandler {
+    
+}
+
+- (void)webView:(WKWebView *)webView runJavaScriptTextInputPanelWithPrompt:(NSString *)prompt defaultText:(NSString *)defaultText initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(NSString * _Nullable))completionHandler {
+    
+}
+
+#pragma mark -- Displaying a Contextual Menu
+
+- (void)webView:(WKWebView *)webView contextMenuConfigurationForElement:(WKContextMenuElementInfo *)elementInfo completionHandler:(void (^)(UIContextMenuConfiguration * _Nullable))completionHandler {
+    
+}
+
+- (void)webView:(WKWebView *)webView contextMenuForElement:(WKContextMenuElementInfo *)elementInfo willCommitWithAnimator:(id<UIContextMenuInteractionCommitAnimating>)animator {
+    
+}
+
+- (void)webView:(WKWebView *)webView contextMenuWillPresentForElement:(WKContextMenuElementInfo *)elementInfo {
+    
+}
+
+- (void)webView:(WKWebView *)webView contextMenuDidEndForElement:(WKContextMenuElementInfo *)elementInfo {
+    
+}
+
+
+
 
 /*
 #pragma mark - Navigation
