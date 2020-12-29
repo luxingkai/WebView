@@ -90,7 +90,6 @@
      */
     
     
-    
     /**
      Configuring the Rendering Behavior
      
@@ -177,7 +176,7 @@
      method of its UI delegate object. The delegate uses the information
      in this object to configure and return the new web view.
      */
-    
+
     /**
      Inspecting Window Position and Dimensions
      

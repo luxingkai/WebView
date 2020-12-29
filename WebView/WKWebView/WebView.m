@@ -144,7 +144,7 @@
      many customizations, such as configuring data detectors, media
      playback, and interaction behaviors. For more extensive customizations,
      create your web view programmatically using a WKWebViewConfiguration
-     object. For example, use a wbe View configuration object to specify
+     object. For example, use a web View configuration object to specify
      handlers for custom URL schemes, manage cookies, and customize
      preferences for your web content.
      
@@ -152,7 +152,7 @@
      server using a URLRequest structure or load content directly
      from a local file or HTML string. The web view automatically
      loads embedded resources such as images or video as part of the
-     intial load request. It then renders your content and displays
+     initial load request. It then renders your content and displays
      the results inside the view's bounds rectangle. The following
      code example shows a view controller that replaces its default
      view with a custom WKWebView object.
