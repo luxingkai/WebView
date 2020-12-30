@@ -101,7 +101,11 @@
      A Boolean value that indicates whether the web view suppresses
      content rendering until the content is fully loaded into memory.
      */
-    webViewConfiguration.ignoresViewportScaleLimits = NO;
+    if (@available(iOS 10.0, *)) {
+        webViewConfiguration.ignoresViewportScaleLimits = NO;
+    } else {
+        // Fallback on earlier versions
+    }
     
     
     /**
@@ -125,6 +129,8 @@
      ==WKAudiovisualMediaTypes
      The media types that require a user gesture to begin playing.
      */
+    webViewConfiguration.allowsInlineMediaPlayback = YES;
+    webViewConfiguration.allowsAirPlayForMediaPlayback = YES;
     
     
     /**
@@ -136,7 +142,11 @@
      ==WKDataDetectorTypes
      The data detector types.
      */
-    webViewConfiguration.dataDetectorTypes = UIDataDetectorTypePhoneNumber | UIDataDetectorTypeLink;
+    if (@available(iOS 10.0, *)) {
+        webViewConfiguration.dataDetectorTypes = UIDataDetectorTypePhoneNumber | UIDataDetectorTypeLink;
+    } else {
+        // Fallback on earlier versions
+    }
     
     
     /**
@@ -150,6 +160,7 @@
      The granularity with which the user can select and modify web
      view content.
      */
+    webViewConfiguration.selectionGranularity = WKSelectionGranularityDynamic;
     
     /**
      Selecting User Interface Directionality
@@ -161,6 +172,7 @@
      The policy that determines the directionality of user interface
      elements in a web view.
      */
+    
     
     
 #pragma mark -- WKWindowFeatures

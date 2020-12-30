@@ -30,7 +30,7 @@
      Choose among several technologies, based on your app's functionality
      and the degree of configurability you need. This article explores
      some alternatives and specifically the configuration and
-     architectural changes of WKWebView.
+     architectural changes of WKWebView. (iOS 8.0)
      */
     
     
@@ -112,7 +112,7 @@
     
     
     
-#pragma mark --
+#pragma mark -- WKWebView
     
     /*
      An object that displays interactive web content, such as for
@@ -159,7 +159,7 @@
      
      A web view automatically converts telephone numbers that appear
      in web content to Phone links. When the user taps a Phone link,
-     the Phone app launches and dails teh number. Use the
+     the Phone app launches and dails the number. Use the
      WKWebViewConfiguration object to change the default data detector
      behavior.
      
@@ -223,10 +223,10 @@
     /**
      Loading Web Content
      */
-//    webView loadRequest:<#(nonnull NSURLRequest *)#>
+//    webView loadRequest:(nonnull NSURLRequest *)
 //    webView loadHTMLString:<#(nonnull NSString *)#> baseURL:<#(nullable NSURL *)#>
 //    webView loadFileURL:<#(nonnull NSURL *)#> allowingReadAccessToURL:<#(nonnull NSURL *)#>
-//    webView loadData:<#(nonnull NSData *)#> MIMEType:<#(nonnull NSString *)#> characterEncodingName:<#(nonnull NSString *)#> baseURL:<#(nonnull NSURL *)#>
+//    webView loadData:<#(nonnull NSData *)#> MIMEType:<#(nonnull NSString *)#> characterEncodingName:<#(nonnull NSString *)#> baseURL:(nonnull NSURL *)
 //    webView.loading
 //    webView.estimatedProgress
     
@@ -276,7 +276,7 @@
      Executing JavaScript
      */
 //    webView evaluateJavaScript:<#(nonnull NSString *)#> completionHandler:<#^(id _Nullable, NSError * _Nullable error)completionHandler#>
-    
+
     
     /**
      Capturing the WebView's Content
@@ -297,7 +297,7 @@
      elements, and perform other user interface-related tasks.
      These methods can be invoked as a result of handling JavaScript
      or other plug-in content. The default web view implementation
-     assumes one window per web view, so nonconventional uesr interfaces
+     assumes one window per web view, so nonconventional user interfaces
      might implement a user interface delegate.
      */
     
@@ -359,6 +359,7 @@
 }
 
 #pragma mark -- Creating and Closing the Web View
+
 - (nullable WKWebView *)webView:(WKWebView *)webView createWebViewWithConfiguration:(WKWebViewConfiguration *)configuration forNavigationAction:(WKNavigationAction *)navigationAction windowFeatures:(WKWindowFeatures *)windowFeatures {
     return nil;
 }
@@ -368,6 +369,7 @@
 }
 
 #pragma mark -- Displaying UI Panels
+
 - (void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completionHandler {
     
 }

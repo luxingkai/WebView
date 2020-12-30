@@ -19,6 +19,7 @@
     // Do any additional setup after loading the view.
     
     
+    
 #pragma mark -- WKWebsiteDataStore
     
     /**
@@ -39,6 +40,7 @@
      using the nonPersistentDataStore method instead.
      */
     
+    
     /**
      Creating a Data Store Object
      
@@ -49,7 +51,7 @@
      Creates a new data store object that stores website data in memory,
      and doesn’t write that data to disk.
      */
-     WKWebsiteDataStore *websiteDataStore = [WKWebsiteDataStore defaultDataStore];
+     WKWebsiteDataStore *websiteDataStore = [WKWebsiteDataStore nonPersistentDataStore];
         
     
     /**

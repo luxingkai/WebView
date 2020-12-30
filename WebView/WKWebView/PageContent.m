@@ -12,7 +12,10 @@
 
 @end
 
-@implementation PageContent
+@implementation PageContent {
+    
+    WKUserContentController *_contentController;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -360,9 +363,9 @@
     
     
     WKWebViewConfiguration *configuration = [WKWebViewConfiguration new];
-    WKUserContentController *contentController = [WKUserContentController new];
-    [contentController addScriptMessageHandler:self name:@"currentCookies"];
-    configuration.userContentController = contentController;
+    _contentController = [WKUserContentController new];
+    [_contentController addScriptMessageHandler:self name:@"currentCookies"];
+    configuration.userContentController = _contentController;
     
     WKWebView *webView = [[WKWebView alloc] initWithFrame:[UIScreen mainScreen].bounds configuration:configuration];
     [self.view addSubview:webView];
@@ -376,6 +379,10 @@
     
     //
     NSLog(@"message %@",message.body);
+    
+}
+
+- (void)dealloc {
     
 }
 
