@@ -39,6 +39,7 @@
      */
     
     
+    
     /**
      Allowing or Denying Navigation Requests
      
@@ -65,7 +66,6 @@
     /**
      Tracking the Load Progress of a Request
 
-     
      webView:didStartProvisionalNavigation:
      Tells the delegate that navigation from the main frame has started.
 

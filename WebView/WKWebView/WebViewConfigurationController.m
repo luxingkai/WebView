@@ -103,6 +103,7 @@
      */
     if (@available(iOS 10.0, *)) {
         webViewConfiguration.ignoresViewportScaleLimits = NO;
+        webViewConfiguration.suppressesIncrementalRendering = NO;
     } else {
         // Fallback on earlier versions
     }
@@ -276,6 +277,8 @@
      A Boolean value that indicates whether pressing the tab
      key changes the focus to links and form controls.
      */
+    WKPreferences *preferences = [WKPreferences new];
+    preferences.minimumFontSize = 10;
     
     /**
      Setting Java and JavaScript Preferences
@@ -306,6 +309,12 @@
      experience, and Mac devices render content for a desktop
      experience.
      */
+    if (@available(iOS 13.0, *)) {
+        WKWebpagePreferences *pagePreferences = [WKWebpagePreferences new];
+        pagePreferences.preferredContentMode = WKContentModeMobile;
+    } else {
+        // Fallback on earlier versions
+    }
     
     
     /**
